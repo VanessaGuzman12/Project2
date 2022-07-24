@@ -1,0 +1,96 @@
+<!DOCTYPE html>!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{url_for('static', filename = 'main.css')}}"
+    type="text/css">
+    {% if title %}
+        <title>{{title}}</title>
+    {% else %}
+        <title>Mortality in Mexico</title>
+    {% endif %}
+</head>
+<body>
+    <div class="site-header-logo">  
+        <h1 class="text-center">
+            Mortality in Mexico
+        </h1>
+    </div>
+
+    <div class="row p-4">  
+        <div class="card m-auto" style="width: 90%;">
+            <div class="card-body"> 
+                <div id="chart1"></div>
+                <p>
+                In this graph we can see that the main cause of death in Mexico in 2020 was heart disease (251k),
+                followed by Diabetes Mellitus (167k), but in position number 6 we have external causes (48k) that can be
+                caused by firearm or knives that could be related to the drug war started in 2006. 
+                
+                    
+            </div>
+        </div>
+        <div class="card m-auto" style="width: 90%;">
+            <div class="card-body"> 
+                <div id="chart2"></div>
+                <p>
+                As can be seen, these differences recorded in the mortality trends of women and men allow us to assert 
+                that the called "over-male mortality" has increased, which will have an important impact on the composition
+                of the demographic pyramid of the country in the next years.
+                </p>
+            </div>
+        </div>
+        <div class="card m-auto" style="width: 90%;">
+            <div class="card-body"> 
+                <div id="chart3"></div>
+                <p>
+                    As we can see in this graph, both men and women die between 60-75 years of age, 
+                    however, from 5 to 15 years of age, the decrease in the number of deaths is shown,
+                    which could tell us that the health system and the programs focused on this age group work.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        var graph1 ={{graph1JSON | safe}}
+        Plotly.plot("chart1", graph1, {})
+
+        var graph2 ={{graph2JSON | safe}}
+        Plotly.plot("chart2", graph2, {})      
+        
+        var graph3 ={{graph3JSON | safe}}
+        Plotly.plot("chart3", graph3, {})  
+    </script>
+
+
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xm-12">
+                <div class="ml-auto mr-auto">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
