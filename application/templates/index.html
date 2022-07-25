@@ -31,10 +31,9 @@
                 <div id="chart1"></div>
                 <p>
                 In this graph we can see that the main cause of death in Mexico in 2020 was heart disease (251k),
-                followed by Diabetes Mellitus (167k), but in position number 6 we have external causes (48k) that can be
+                followed by Covid-19 (197k) and Diabetes Mellitus (167k), but in position number 6 we have external causes (48k) that can be
                 caused by firearm or knives that could be related to the drug war started in 2006. 
-                
-                    
+
             </div>
         </div>
         <div class="card m-auto" style="width: 90%;">
@@ -51,9 +50,28 @@
             <div class="card-body"> 
                 <div id="chart3"></div>
                 <p>
-                    As we can see in this graph, both men and women die between 60-75 years of age, 
+                    As we can see in this graph, most men and women die between 60-75 years of age, 
                     however, from 5 to 15 years of age, the decrease in the number of deaths is shown,
                     which could tell us that the health system and the programs focused on this age group work.
+                </p>
+            </div>
+        </div>
+        <div class="card m-auto" style="width: 90%;">
+            <div class="card-body"> 
+                <div id="chart4"></div>
+                <p>
+                    Analyzing the deaths due to Covid-19, we can find that deaths were concentrated after the 45 y.o.,
+                    something that replied in other countries according to the media.
+                </p>
+            </div>
+        </div>
+        <div class="card m-auto" style="width: 90%;">
+            <div class="card-body"> 
+                <div id="chart5"></div>
+                <p>
+                    When we analyze the deaths due to External causes (e.g. Homicides, Suicides), we can see that the most affected 
+                    population is between 15 and 45 y.o., contrary to what happens with Covid-19. Another interesting fact is the disparity 
+                    of number of deaths by gender, with men are the most affected population.
                 </p>
             </div>
         </div>
@@ -69,7 +87,14 @@
         
         var graph3 ={{graph3JSON | safe}}
         Plotly.plot("chart3", graph3, {})  
-    </script>
+
+        var graph4 ={{graph4JSON | safe}}
+        Plotly.plot("chart4", graph4, {})  
+
+        var graph5 ={{graph5JSON | safe}}
+        Plotly.plot("chart5", graph5, {})  
+
+</script>
 
 
 
